@@ -1,13 +1,20 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "../styles/Home.module.css";
 import Head from "next/head";
 import { GetStaticProps, GetStaticPaths, GetServerSideProps } from "next";
 import { server } from "../config";
 import ArticleList from "../components/article/ArticleList";
+import { LoginState } from "../redux/models";
+import { RootState } from "../redux/reducers";
 const datas = ["1", "2", "3"];
+
 export default function Home(props: any) {
 	const { articles } = props;
-
+	const { loginUser, errorLogin, isLogin }: LoginState = useSelector(
+		(state: RootState) => state.loging
+	);
+console.log(loginUser);
 	return (
 		<div>
 			<ArticleList datas={articles} />

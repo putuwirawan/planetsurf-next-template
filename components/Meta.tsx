@@ -20,9 +20,10 @@ const Meta: FC<Props> = (props) => {
 	);
 };
 
-Meta.defaultProps={
-    title:'Planet Surf',
-    keywords: 'planetsurf, planet surf, clhothing, pan, bag, bagpack, Tshirt, T shirt',
-    description:'online store'
-}
+Meta.defaultProps = {
+	title: "Planet Surf",
+	keywords:
+		"planetsurf, planet surf, clhothing, pan, bag, bagpack, Tshirt, T shirt",
+	description: "online store",
+};
 export default Meta;
