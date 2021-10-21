@@ -1,4 +1,6 @@
 import { Dispatch } from "react";
+import { API_Host } from "../../config";
+
 import {
 	LogingAction,
 	LOGIN_USER,
@@ -14,6 +16,9 @@ export const logIn = (user: UserType) => {
 };
 export const logOut = () => {
 	return (dispatch: Dispatch<LogingAction>) => {
+		document.cookie = `username=; path=/ ;maxAge: 3600`;
+		document.cookie = `access_token=; path=/ ;maxAge: 3600`;
+		document.cookie = `refresh_token=; path=/ ;maxAge: 3600`;
 		dispatch({ type: LOGOUT_USER });
 	};
 };

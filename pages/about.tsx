@@ -1,13 +1,19 @@
 import React from "react";
-import Meta from "../components/Meta";
 
-const about = () => {
+import Link from "@material-ui/core/Link";
+import { Link as RouterLink } from "react-router-dom";
+import { Header } from "../components/Header";
+import MatLayout from "../components/AppBar/MatLayout";
+
+export default function About(props: any) {
+	const { data } = props;
+
 	return (
-		<div>
-			<Meta title='About'/>
-			<h1>About</h1>
-		</div>
+		<>
+			<MatLayout>
+				<Header />
+				<main>About</main>
+			</MatLayout>
+		</>
 	);
-};
-
-export default about;
+}

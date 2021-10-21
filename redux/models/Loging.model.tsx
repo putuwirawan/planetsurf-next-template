@@ -1,13 +1,11 @@
 export interface UserType {
-	userId: string;
 	username: string;
 	access_token: string;
 	refresh_token: string;
-	cart_token: string;
-	role: string;
+
 }
 export interface LoginState {
-	loginUser: UserType | undefined;
+	user_login: UserType| undefined;
 	errorLogin: any | undefined;
 	isLogin: boolean;
 }

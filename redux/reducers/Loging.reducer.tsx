@@ -7,9 +7,10 @@ import {
 } from "../models";
 
 export const initialState: LoginState = {
-	loginUser: undefined,
+
+	user_login:undefined,
 	errorLogin: undefined,
-	isLogin: false,
+	isLogin: false
 };
 
 export function logingReducer(
@@ -18,16 +19,18 @@ export function logingReducer(
 ): LoginState {
 	switch (action.type) {
 		case LOGIN_USER: {
+			
 			return {
 				...state,
-				loginUser: action.userData,
+				user_login: action.userData,		
 				isLogin: true,
+				errorLogin: undefined,
 			};
 		}
 		case ERROR_LOGIN: {
 			return {
 				...state,
-				loginUser: undefined,
+				user_login: undefined,
 				errorLogin: action.error,
 				isLogin: false,
 			};
@@ -35,7 +38,7 @@ export function logingReducer(
 		case LOGOUT_USER: {
 			return {
 				...state,
-				loginUser: undefined,
+				user_login: undefined,
 				errorLogin: undefined,
 				isLogin: false,
 			};

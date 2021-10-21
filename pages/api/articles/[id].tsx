@@ -1,6 +1,7 @@
 import { datas } from "../../../dummyData/data";
+import type { NextApiRequest, NextApiResponse } from "next";
 
-export default function handler(req: any, res: any) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
 	const id = req.query.id;
 
 	const filtered = datas.filter((data) => data.id.toString() === id);
